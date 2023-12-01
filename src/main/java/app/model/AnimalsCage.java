@@ -8,14 +8,16 @@ import org.springframework.stereotype.Component;
 @Component      // указание, что класс является компонентом  управляемым контейнером Spring
 public class AnimalsCage {
 
-    @Autowired
+    @Autowired          //пытается найти соответствующий бин, который можно внедрить
     @Qualifier("dog")
     private Animal animal;
 
     @Autowired
     private Timer timer;
-    public Timer getTimer() { return timer; }
 
+    public Timer getTimer() {
+        return timer;
+    }
 
     public void whatAnimalSay() {
         System.out.println("Say:");
